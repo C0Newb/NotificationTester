@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnResetIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="btnResetIcon_Click"
+        android:text="Reset"
+        app:layout_constraintStart_toEndOf="@+id/btnIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnIcon"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="32dp"
+        android:background="#0097A7"
+        android:onClick="btnIcon_Click"
+        android:src="@drawable/notificationicon"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Icon:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="42dp"
+        android:text="Contents:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <EditText
+        android:id="@+id/txtTitle"
+        android:layout_width="302dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Title"
+        android:importantForAutofill="no"
+        android:inputType="textShortMessage|textNoSuggestions"
+        android:singleLine="true"
+        android:text="Test Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/btnIcon" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Title:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIcon" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/txtDescription"
+        android:layout_width="302dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="This is a sample notification with a basic set of text."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <TextView
+        android:id="@+id/lblPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Picture"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radStyleGroup"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/btnPicture"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="#0097A7"
+        android:onClick="btnPicture_Click"
+        android:src="@drawable/notificationicon"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/lblPicture"
+        app:layout_constraintTop_toBottomOf="@+id/radStyleGroup"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnResetPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:onClick="btnResetPicture_Click"
+        android:text="Reset"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/btnPicture"
+        app:layout_constraintTop_toBottomOf="@+id/radStyleGroup"
+        tools:visibility="visible" />
+
+    <RadioGroup
+        android:id="@+id/radStyleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription">
+
+        <RadioButton
+            android:id="@+id/radBasic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:clickable="true"
+            android:text="Basic" />
+
+        <RadioButton
+            android:id="@+id/radBigImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="true"
+            android:text="Big image" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="btnSend_Click"
+        android:text="Send notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnWallOfButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="btnWallOfButtons_Click"
+        android:text="Open wall of buttons"
+        app:layout_constraintBottom_toTopOf="@+id/btnSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
