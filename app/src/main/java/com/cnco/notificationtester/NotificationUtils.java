@@ -160,7 +160,7 @@ public class NotificationUtils {
             //we are running Nougat
             //the intent should start a service, so that the response can be handled in the background
             replyIntent = new Intent(Context, InlineReplyIntentService.class);
-            replyPendingIntent = PendingIntent.getService(Context, 0, replyIntent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
+            replyPendingIntent = PendingIntent.getService(Context, 0, replyIntent, PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
         } else {
             //we are running a version prior to Nougat
             //There will be no response included with intent, so we want to start an Activity to allow
@@ -186,7 +186,7 @@ public class NotificationUtils {
         // "Mark as read" button
         Intent doneIntent = new Intent(Context, InlineReplyIntentService.class);
         doneIntent.setAction(InlineReplyIntentService.ACTION_READ);
-        PendingIntent donePendingIntent = PendingIntent.getService(Context, 0, doneIntent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent donePendingIntent = PendingIntent.getService(Context, 0, doneIntent, PendingIntent.FLAG_MUTABLE | PendingIntent.FLAG_CANCEL_CURRENT);
         NotificationCompat.Action doneAction = new NotificationCompat.Action.Builder(android.R.drawable.ic_menu_close_clear_cancel, "Mark as read", donePendingIntent).build();
         notification.addAction(doneAction); // Add button
 
